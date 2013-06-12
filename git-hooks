@@ -38,6 +38,14 @@ function hook_dirs
     cd $GITDIR/..
     echo "${PWD}/git_hooks${hook}"
     echo "${PWD}/.githooks${hook}"
+	while [ $PWD != $HOME ]
+	do
+		cd ..
+		if [ -d .githooks ] ; then
+			echo "${PWD}/.githooks${hook}"
+		fi
+	done
+
     eval echo "`git config hooks.global`"${hook}
 }
 
