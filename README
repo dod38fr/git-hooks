@@ -41,6 +41,8 @@ git-hooks provide a way to manage and share your hooks by allowing for the insta
  - Global hooks that are specified with the hooks.global configuration option.
      The contrib directory includes a number of useful hooks and can be set by doing the following:
      git config --global hooks.global $PWD/contrib/
+ - Global-ish hooks that are specified in parent directories of repositories.
+     Hooks are searched in parents dir of a repository until home directory is reached. So hooks can be setup for  groups of projects. This can be used to setup work hooks for work project and other hooks for other projects.
 
 Multiple global hooks directories can be specified by using a space between each path.
 
